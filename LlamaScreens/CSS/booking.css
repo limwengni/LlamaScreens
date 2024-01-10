@@ -1,0 +1,498 @@
+﻿body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    flex: 1;
+    display: flex;
+}
+
+.content-wrap {
+    display: flex;
+    flex: 1;
+}
+
+.all-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Style for the step container */
+.step-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Align items to the bottom */
+    margin: 20px;
+}
+
+/* Style for each step */
+.step {
+    text-align: center;
+    font-size: 25px; /* Adjust the font size as needed */
+    margin-bottom: 5px; /* Adjust the spacing between the step and the line */
+    color: white;
+}
+
+/* Style for the line between steps */
+.step-line {
+    color: white; /* Change the color of the line as needed */
+    margin: 20px 0 auto; /* Center the line with some spacing */
+    font-size: 40px;
+}
+
+.movie-container {
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    flex: 1;
+}
+
+    .movie-container select {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: 0;
+        padding: 5px 15px;
+        margin-bottom: 40px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+
+.container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.seat {
+    background-color: #4a4a58;
+    height: 20px;
+    width: 25px;
+    margin: 3px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+
+
+    .seat:nth-of-type(2) {
+        margin-right: 18px;
+    }
+
+    .seat:nth-last-of-type(2) {
+        margin-left: 18px;
+    }
+
+    .seat:not(.occupied):hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+.showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+}
+
+.showcase {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    background: rgba(0,0,0,0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #c1c1c1;
+    font-size: 0.6em;
+    font-weight: 600;
+    margin: 0;
+}
+
+    .showcase li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+    }
+
+        .showcase li small {
+            margin-left: 2px;
+        }
+
+    .showcase .seat {
+        width: 20px;
+        height: 15px;
+    }
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .row::before {
+        content: attr(data-row);
+        margin-right: 10px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .row::after {
+        content: attr(data-row);
+        margin-left: 10px;
+        font-weight: bold;
+        color: white;
+    }
+
+.buttons-container {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add these styles for sliding animation */
+
+.slide-in {
+    right: -5px; /* Position to slide in */
+}
+
+.info-container {
+    position: relative;
+    width: 270px; /* Adjust the width as needed */
+    margin-top: 20px; /* Add margin-top for spacing */
+    margin-right: -15px;
+}
+
+.information {
+    position: absolute;
+    top: -20px;
+    width: 270px; /* Same as the wrapper width */
+    transition: right 0.3s ease; /* Add a smooth transition effect */
+    z-index: 1; /* Ensure it's above the seat container */
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #343a40;
+    /*#343a40*/
+    padding: 40px 20px;
+    z-index: 9999;
+    width: 500px;
+    color: whitesmoke;
+}
+
+/* Style for the overlay */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity as needed */
+    z-index: 9998; /* Ensure the overlay is behind the popup */
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.popup-title {
+    margin: 0 auto;
+}
+
+.close-btn {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+    .close-btn::before,
+    .close-btn::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 4px;
+        background-color: red;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .close-btn::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+.seat-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0 25px;
+}
+
+.seat-info {
+    padding: 10px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.seat-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-width: 110px;
+}
+
+.category-name {
+    font-size: 0.6em;
+    font-weight: 600;
+    padding-bottom: 1.2em;
+}
+
+.category-price {
+    position: absolute;
+    bottom: 0;
+    font-size: 0.8em;
+}
+
+.seat-selection {
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+    .quantity-controls input {
+        width: 70%;
+        height: 38px;
+        border: none;
+        border-radius: 0;
+        padding: 0 12px;
+        align-content: center;
+    }
+
+
+    .quantity-controls .decrement {
+        border-radius: 5px 0 0 5px;
+    }
+
+    .quantity-controls .increment {
+        border-radius: 0 5px 5px 0;
+    }
+
+@media only screen and (min-width: 600px) {
+    .info-container {
+        position: relative;
+        width: 270px; /* Adjust the width as needed */
+        margin-top: 20px; /* Add margin-top for spacing */
+        margin-right: -25px;
+    }
+
+    .information {
+        position: absolute;
+        top: -20px;
+        width: 270px; /* Same as the wrapper width */
+        transition: right 0.3s ease; /* Add a smooth transition effect */
+        z-index: 1; /* Ensure it's above the seat container */
+    }
+}
+
+
+
+
+
+.venue-type-seat-map-wrap {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.seat-row {
+    flex: 1;
+    max-height: 20px;
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.8em;
+}
+
+.seat-row-alphabet {
+    position: absolute;
+    font-weight: 700;
+    font-size: 0.7em;
+    top: -0.2em;
+    left: -1.1em;
+    margin: 0;
+    text-align: center;
+    width: 12px;
+    height: 12px;
+}
+
+.seat-col-number {
+    position: absolute;
+    font-weight: 700;
+    font-size: 0.7em;
+    bottom: -1.1em;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    text-align: center;
+    height: 12px;
+    letter-spacing: -0.5px;
+}
+
+.seat-col {
+    height: 100%;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+    .seat-col span {
+        display: flex;
+        background-color: #4a4a58;
+        height: 20px;
+        width: 25px;
+        margin: 3px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        cursor: pointer;
+        position: relative;
+    }
+
+.selected {
+    background-color: #0081cb !important;
+}
+
+.occupied {
+    background-color: #fff !important;
+}
+
+.show-invalid {
+    background-color: rgb(114, 74, 74) !important;
+}
+
+.seat-col span:hover {
+    background-color: #646477;
+}
+
+.seat-row-break {
+    height: 6px;
+    width: 80%;
+    background-color: transparent;
+}
+
+
+.screen-row {
+    width: 45%;
+    margin: 5px 0 35px 0;
+    border-top: 10px solid #fff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    position: relative;
+}
+
+    .screen-row:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        box-shadow: 0 3px 10px rgba(255,255,255,0.7);
+        top: -10px;
+    }
+
+    .screen-row p {
+        font-size: 0.8em;
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+.exit-row {
+    display: none;
+}
+
+.screen-row p {
+    display: none;
+}
+
+.seat-row-alphabet {
+    position: absolute;
+    font-weight: 600;
+    font-size: 0.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -1.2em;
+    margin: 0;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seat-col-number {
+    position: absolute;
+    font-weight: 600;
+    font-size: 0.5em;
+    bottom: -1.4em;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    text-align: center;
+    height: 20px;
+    letter-spacing: -0.5px;
+    color: #fff;
+}
+
+.seat-col, .seat-col span {
+    position: relative;
+}
+
+.card-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #fff;
+}

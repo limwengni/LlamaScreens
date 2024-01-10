@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="memberTemplate.master.cs" Inherits="LlamaScreens.Member.memberTemplate" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../CSS/template.css" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg top-navbar px-0 px-lg-5 pt-0 pt-lg-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../main.aspx">
+                <img src="../img/llama-icon.png" alt="Logo"  draggable="false"/>Llama Cinema</a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ms-auto" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../movieList.aspx">Movies</a>
+                    </li>
+<%--                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="promotion-list" role="button" data-bs-toggle="dropdown" aria-expanded="false">Promotions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="promotion-list">
+                            <li><a class="dropdown-item" href="#">Buy 1 Free 1</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="food-list" role="button" data-bs-toggle="dropdown" aria-expanded="false">Food
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="food-list">
+                            <li><a class="dropdown-item" href="#">Fries</a></li>
+                        </ul>
+                    </li>--%>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../promotion.aspx">Promotion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">About Us</a>
+                    </li>
+                    <%if (!isLoggedIn()) { %>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../login.aspx">Log In</a>
+                    </li>
+                    <% } else {  %>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="profile-list" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="profile-list">
+                            <a class="nav-link active mb-1" href="profile.aspx">Profile</a>
+                            <a class="nav-link active" href="../logout.aspx">Log Out</a>
+                        </ul>
+                    </li>
+                    <%} %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+
+            const currentUrl = window.location.href;
+            if (currentUrl == "https://localhost:44316/main.aspx") {
+                $(".top-navbar").addClass("floating bg-transparent");
+
+                $(window).scroll(function () {
+                    var scroll = $(window).scrollTop();
+                    // Change header background and add sticky behavior
+                    if (scroll > 50) {
+                        $(".top-navbar").removeClass("bg-transparent").addClass("bg-dark");
+                    } else {
+                        $(".top-navbar").removeClass("bg-dark").addClass("bg-transparent");
+                    }
+                });
+            } else {
+                $(".top-navbar").addClass("sticky-top bg-dark");
+            }
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="script" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

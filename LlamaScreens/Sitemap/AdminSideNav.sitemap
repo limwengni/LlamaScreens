@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Admin"  description="a">
+    <siteMapNode url="~/Admin/DashBoard.aspx" title="DashBoard" description="a"/>
+
+    <siteMapNode url="~/Admin/Movie.aspx" title="Movie" description="a">
+      <siteMapNode url="~/Admin/AddMovie.aspx" title="New Movie" description="a"/>
+      <siteMapNode url="~/Admin/EditMovie.aspx" title="Edit Movie" description="a"/>
+      <siteMapNode url="~/Admin/ViewMovie.aspx" title="View Movie Details" description="a"/>
+    </siteMapNode>
+    <siteMapNode url="~/Admin/Category.aspx" title="Category" description="a"/>
+
+    <siteMapNode url="~/Admin/Member.aspx" title="Member" description="a">
+      <siteMapNode url="~/Admin/ViewMember.aspx" title="View Member Details" description="a"/>
+    </siteMapNode>
+
+    <siteMapNode url="~/Admin/Transaction.aspx" title="Transaction" description="a">
+      <siteMapNode url="~/Admin/ViewTransaction.aspx" title="View Transaction Details" description="a"/>
+    </siteMapNode>
+
+    <siteMapNode url="~/Admin/Venue.aspx" title="Venue" description="a">
+      <siteMapNode url="~/Admin/AddVenue.aspx" title="New Venue" description="a"/>
+      <siteMapNode url="~/Admin/AddVenueType.aspx" title="New Venue Type" description="a"/>
+    </siteMapNode>
+
+    <siteMapNode url="~/Admin/ManageAdmin.aspx" title="Manage Admin" description="a">
+      <siteMapNode url="~/Admin/AddAdmin.aspx" title="Create Admin Account" description="a"/>
+      <siteMapNode url="~/Admin/ViewAdmin.aspx" title="View Admin Details" description="a"/>
+    </siteMapNode>
+
+    <siteMapNode url="~/Admin/Booking.aspx" title="Booking" description="a">
+      <siteMapNode url="~/Admin/ViewBooking.aspx" title="View Booking Details" description="a"/>
+    </siteMapNode>
+    <siteMapNode url="~/Admin/Showtime.aspx" title="Showtime" description="a">
+      <siteMapNode url="~/Admin/ViewShowtime.aspx" title="View Showtime Details" description="a"/>
+      <siteMapNode url="~/Admin/AddShowtime.aspx" title="New Showtime" description="a"/>
+    </siteMapNode>
+
+    
+    <siteMapNode url="~/Admin/AdminLog.aspx" title="AdminLog" description="a"/>
+    <siteMapNode url="~/Admin/Profile.aspx" title="Profile" description="a"/>
+  </siteMapNode>
+</siteMap>
+

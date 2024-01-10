@@ -1,0 +1,200 @@
+﻿body {
+    background-image: url("../Img/login_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+.detailInput {
+    position: relative;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.left-card {
+    position: relative;
+}
+
+    .left-card::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url("../img/login_card_bg.jpg");
+        opacity: 0.9;
+        z-index: -1;
+    }
+
+.detailInput input {
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #333;
+    padding: 10px 5px 5px 5px;
+    display: block;
+    font-size: 16px;
+    font-family: "Muli", sans-serif;
+    width: 100%;
+    transition: 0.1s ease-in;
+    color: white;
+}
+
+    .detailInput input:focus,
+    .detailInput input:valid {
+        border-bottom-color: dimgrey;
+        outline: none;
+    }
+
+        .detailInput input:focus + label span,
+        .detailInput input:valid + label span {
+            color: whitesmoke;
+            transform: translateY(-25px);
+        }
+
+.detailInput label {
+    position: absolute;
+    cursor: text;
+    top: 10px;
+    left: 0;
+    user-select: none;
+}
+
+    .detailInput label span {
+        display: inline-block;
+        font-size: 16px;
+        min-width: 5px;
+        transition: 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+.detailInput div #lblBirthDate {
+    position: absolute;
+    cursor: text;
+    top: 10px;
+    left: 0;
+    transition: 0.1s;
+}
+
+.detailInput div #lblBirthDate {
+    animation: slideUp 0.2s;
+}
+
+.lgnBtn, .signupBtn {
+    background-color: white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    padding: 15px 40px;
+    text-align: center;
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    user-select: none;
+}
+
+    .lgnBtn:disabled, .ignupBtn:disabled {
+        pointer-events: none;
+    }
+
+    .lgnBtn:hover, .signupBtn:hover {
+        transform: translateY(-10px) scale(1.1);
+        transition-delay: 0.1s;
+    }
+
+.forgetPassBtn {
+    border: none;
+    background: transparent;
+    color: white;
+    float: right;
+    margin-top: 10px;
+}
+
+    .forgetPassBtn:hover {
+        color: red;
+        transition: 0.2s;
+    }
+
+/*Change login register css*/
+
+.selection .option {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+    .selection .option::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background-color: red;
+        transition: ease-in 0.2s;
+        transform: scale(0);
+    }
+
+    .selection .option.active::after {
+        transform: scale(1);
+    }
+
+.form-input {
+    transition: 1s;
+    position: absolute;
+    width: 75%;
+    -webkit-animation: slide 1s forwards;
+}
+
+    .form-input#login-form {
+        left: -100%;
+        animation: slideLeft 0.5s forwards;
+    }
+
+    .form-input#register-form {
+        left: -100%;
+        animation: slideLeft 0.5s forwards;
+    }
+
+    .form-input.slideout {
+        transition: 0.5s;
+        animation: slideRight 0.2s forwards, fadeOut 0.2s forwards;
+        transform: translateX(120%);
+    }
+
+@keyframes slideLeft {
+    100% {
+        left: 15%;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        left: 15%;
+    }
+
+    100% {
+        left: 120%;
+    }
+}
+
+@keyframes slideUp {
+    100% {
+        transform: translateY(25px);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}

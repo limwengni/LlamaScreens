@@ -1,0 +1,61 @@
+﻿body {
+    font-size: 30px;
+    background-color: #343a40;
+}
+
+.top-navbar{
+    z-index: 998;   
+    font-size: 1rem;
+    width: 100%;
+}
+
+.top-navbar.floating{
+    float: left;
+    position: fixed;
+}
+
+.navbar-brand img {
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+.top-navbar .nav-item{
+    padding: 0 0.7rem;
+    font-weight: 600;
+}
+
+.top-navbar .dropdown-menu {
+    background-color: #343a40;
+}
+
+.top-navbar .dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+.top-navbar .dropdown-item {
+    color: whitesmoke;
+}
+
+.top-navbar .nav-link:hover, .top-navbar .dropdown-item:hover,.site-footer .nav-link:hover, .site-footer.dropdown-item:hover  {
+    color: yellow;
+    background-color: transparent;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body{
+        font-size: 25px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width : 767px) {
+    body {
+       font-size: 25px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}

@@ -1,0 +1,182 @@
+﻿.movie-banner {
+    color: white;
+    height: 50vh;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.title{
+    font-size: 1.2em;
+    font-weight: 800;
+    transition: 0.36s;
+}
+
+.sub-title{
+    font-size: 0.6em;
+}
+
+.movie-details .card{
+    background-color:transparent;
+    border: none;
+    font-size: 0.6em;
+    height: 100px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.movie-details .card::-webkit-scrollbar {
+    width: 5px;
+}
+
+.movie-details .card::-webkit-scrollbar-track {
+    background: #888;
+}
+
+.movie-details .card::-webkit-scrollbar-thumb {
+    background: whitesmoke;
+    border-radius: 25%;
+}
+
+.view-details-item{
+    color: rgba(255, 254, 254, 0.7);
+    font-size: 0.9em;
+}
+
+
+.view-more-btn {
+    color: red;
+    font-weight: 700;
+    font-size: 0.7em;
+    text-decoration: none;
+}
+
+.slots-container{
+    padding: 20px 100px;
+}
+
+.day-slots {
+    background-color: rgba(37, 37, 37, 0.521);
+    color: white;
+    justify-content: start;
+    gap: 20px;
+}
+
+.day-slots .nav-item{
+    text-align:center;
+    padding: 0 30px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    position: relative;
+    font-size: 1.1em;
+}
+
+.day-slots .nav-item::after{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: grey;
+    transform: scaleX(0);
+    transition: 0.4s ease-in-out;
+}
+
+.day-slots .nav-item:hover{
+    cursor: pointer;
+}
+
+.day-slots .nav-item.active{
+    cursor: pointer;
+}
+
+.day-slots .nav-item.active::after{
+    transform: scaleX(1);
+    background-color: red;
+}
+
+.day-slots .day{
+    font-size: 0.4em;
+    font-weight: 600;
+}
+
+.day-slots .date {
+    font-size: 0.6em;
+}
+
+.time-slots {
+    /*background-image: url(Img/slot_background.jpg);
+    background-repeat: repeat;
+    background-size: 200px 200px;*/
+    color: white;
+    height: 500px;
+}
+
+.time-slots .wrapper{
+    background-color: black;
+    padding: 30px 20px;
+}
+
+.time-slots .wrapper .title{
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.time-slots .slot{
+    background-color: rgba(37, 37, 37, 0.521);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    position: relative;
+    user-select: none;
+    font-size: 0.8em;
+}
+
+.time-slots .slot:hover{
+    background-color: rgba(37, 37, 37, 0.8);
+}
+
+.time-slots .slot.selected{
+    background-color: rgba(37, 37, 37, 0.8);
+    transform: scale(1.1);
+}
+
+.time-slots .slot::after{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: greenyellow;
+    transform: scaleX(1);
+    transition: 0.4s ease-in-out;
+}
+
+/*.time-slots .slot.full {
+    pointer-events: none;
+    cursor: pointer;
+}*/
+
+.time-slots .slot.full::after{
+    background-color: red;
+}
+
+@media only screen and (max-width: 600px) {
+    .movie-banner {
+        height: 40vh;
+    }
+}
+

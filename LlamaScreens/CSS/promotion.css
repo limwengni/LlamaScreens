@@ -1,0 +1,16 @@
+﻿.promotion-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.image-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+img {
+    max-width: 30%; /* Adjust the width as needed */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}

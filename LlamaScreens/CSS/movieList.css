@@ -1,0 +1,86 @@
+﻿.option{
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+    font-size: 0.8em;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.option::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid white;
+}
+
+.option:hover{
+    color: red;
+}
+
+.option.active{
+    color: red;
+}
+
+.option.active::after{
+    border-bottom: 5px solid red;
+}
+
+.card{
+    color: white;
+    position: relative;
+}
+
+.card .card-title{
+    font-size: 0.9em;
+}
+
+.card .card-text{
+    font-size: 0.6em;
+}
+
+
+.card .btn{
+    font-size: 0.6em;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+.book-btn{
+    color: black;
+    background-color: white;
+    border: none;
+    font-weight: 800;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.book-btn:hover{
+    color: white;
+    background-color: red;
+
+}
+
+.details-btn {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    font-weight: 800;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.details-btn:hover{
+    color: red;
+    background-color: transparent;
+    border: 1px solid red;
+}

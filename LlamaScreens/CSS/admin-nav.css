@@ -1,0 +1,263 @@
+.nav-item-icon {
+    fill: var(--sidebar-text);
+    width: 24px;
+    height: 24px;
+    stroke-width: 0.2px;
+    stroke: var(--sidebar-text);
+}
+
+.nav-link {
+    color: var(--sidebar-text);
+    opacity: 0.5;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:visited,
+.nav-link:focus {
+    color: var(--sidebar-text);
+    outline: none;
+}
+
+.nav-link:hover {
+    color: var(--sidebar-text);
+    opacity: 1;
+}
+
+.nav-link:active {
+    opacity: 0.8;
+}
+
+.active {
+    opacity: 1;
+    background-color: var(--admin-active-color) !important;
+}
+
+.nav-item-icon {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover .nav-item-icon {
+    transform: translate(0, -0.125rem);
+}
+
+
+
+.phone-header {
+    height: 50px;
+}
+
+.dropdown-toggle::after {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+/* Toggle Button */
+.toggle-checkbox {
+    display: none;
+}
+
+.navigation-toggle {
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.navigation-toggle-icon {
+    border-bottom: 3px solid white;
+    padding-top: 13.4px;
+    display: block;
+}
+
+.navigation-toggle-icon:before,
+.navigation-toggle-icon:after {
+    border-top: 3px solid white;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.navigation-toggle-icon:before {
+    top: 5px;
+}
+
+.navigation-toggle-icon:after {
+    bottom: 5px;
+}
+
+.navigation-toggle-icon,
+.navigation-toggle-icon:before,
+.navigation-toggle-icon:after {
+    transition-property: transform, border-color;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+}
+
+.navigation-toggle-icon {
+    transition-delay: 0.125s;
+}
+
+.navigation-toggle-icon:before,
+.navigation-toggle-icon:after {
+    transition-delay: 0s;
+    transform-origin: center;
+}
+
+.toggle-checkbox:checked+.navigation-toggle .navigation-toggle-icon {
+    transition-delay: 0s;
+}
+
+.toggle-checkbox:checked+.navigation-toggle .navigation-toggle-icon:before,
+.toggle-checkbox:checked+.navigation-toggle .navigation-toggle-icon:after {
+    transition-delay: 0.125s;
+}
+
+.toggle-checkbox:checked+.navigation-toggle .navigation-toggle-icon:before {
+    transform: translateY(8px) rotate(135deg);
+}
+
+.toggle-checkbox:checked+.navigation-toggle .navigation-toggle-icon {
+    border-color: transparent;
+}
+
+.toggle-checkbox:checked+.navigation-toggle .navigation-toggle-icon:after {
+    transform: translateY(-9px) rotate(-135deg);
+}
+
+
+.phone-nav {
+    z-index: 1;
+    position: absolute !important;
+    top: 0;
+    width: 100vw !important;
+    height: 100% !important;
+    max-width: none !important;
+}
+
+.open {
+    display: flex !important;
+    left: 0;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.close {
+    display: flex !important;
+    left: -100%;
+    animation: slideOut 0.3s ease-in-out;
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes slideIn {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+#dropdownUser1 b {
+    opacity: 0.8;
+    transition: all 0.2s;
+}
+
+#dropdownUser1:hover b {
+    opacity: 1;
+}
+
+.dropdown-item {
+    transition: all 0.2s;
+}
+
+.dropdown-divider {
+    margin: 2px 5px;
+}
+
+.clock {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    font-size: 0.8em;
+    height: 25px;
+    color: rgba(255, 255, 255, 0.72);
+    background-color: var(--bs-dark);
+    padding: 2px 10px 4px 10px;
+    transition: all 0.2s;
+    user-select: none;
+    z-index: 2;
+}
+
+.clock:hover{
+    color: rgba(255, 255, 255);
+}
+
+.leftshape {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 13.5px solid transparent;
+    border-right: 13.5px solid transparent;
+    border-top: 25px solid var(--bs-dark);
+    left: -13.5px;
+    top: 0;
+}
+
+.rightshape{
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 13.5px solid transparent;
+    border-right: 13.5px solid transparent;
+    border-top: 25px solid var(--bs-dark);
+    right: -13.5px;
+    top: 0;
+}
+
+.maintitle{
+    padding: 0;
+    padding-top: 10px;
+    font-weight: 700; 
+    opacity: 0.9;
+    user-select: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .fixed {
+        width: 100% !important;
+        position: unset !important;
+    }
+}

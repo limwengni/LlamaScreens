@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Purchase Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            margin: 0 auto;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        th {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!--<img src="img/llama-icon.png" alt="Llama Cinema Logo" width="100" height="100">-->
+    <div style="text-align: center">
+        <img src="https://lh3.googleusercontent.com/pw/ABLVV84JnaX6WNqChvxaynju-NRoU2yvgPb_ZLc0vnuZGfjkqH4rZTBEn_a50DTYzUi640RogfB_GMq75dAshroN4sb9I_3OKIuxDeRGJPf72KX-PQE19HU=w2400" alt="Llama Cinema Logo" width="100" height="100"/>
+    </div>
+
+    <h1>Llama Cinema Ticket Purchase Receipt</h1>
+    <table>
+        <tr>
+            <th>Payment ID:</th>
+            <td>{{ payment_id }}</td>
+        </tr>
+        <tr>
+            <th>Payment Date:</th>
+            <td>{{ payment_date }}</td>
+        </tr>
+        <tr>
+            <th>Payment Amount:</th>
+            <td>RM {{ payment_amount }}</td>
+        </tr>
+        <tr>
+            <th>Payment Type:</th>
+            <td>{{ payment_type }}</td>
+        </tr>
+        <tr>
+            <th>Customer Name:</th>
+            <td>{{ customer_name }}</td>
+        </tr>
+        <tr>
+            <th>Customer Email:</th>
+            <td>{{ customer_email }}</td>
+        </tr>
+    </table>
+
+    <p style="width: 40%; text-align: center; margin: 0 auto; padding-top: 10px;">Please note that all ticket sales are final and non-refundable.</p>
+
+    <p style="width: 40%; text-align: center; margin: 0 auto; padding-top: 10px;">If you have any questions or concerns, please contact us at: <a href="mailto: support@llamacinema.com">support@llamacinema.com</a></p>
+
+</body>
+</html>

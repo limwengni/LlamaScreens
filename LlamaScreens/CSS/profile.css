@@ -1,0 +1,174 @@
+﻿body {
+    background-color: #383F45 !important;
+    min-height: 100vh;
+}
+
+/*sidebar*/
+.imageBg {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    object-fit: cover;
+    display: block;
+    filter: blur(1px) brightness(90%);
+}
+
+.iconProfilePic {
+    border: 5px solid white;
+    border-radius: 100%;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 25%;
+    left: 30%;
+}
+
+.sidebarItem {
+    width: 100%;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+}
+
+.card {
+    background-color: #212529;
+}
+
+.sidebarItem::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    transform: scale(0);
+    transition: 0.2s ease-in;
+    background-color: whitesmoke;
+}
+
+.sidebarItem:hover::after {
+    transform: scale(1);
+}
+
+.sidebarItem.active::after {
+    transform: scale(1);
+}
+
+/*Profile Content*/
+.profilePic {
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+}
+
+#editBtn, #backBtn {
+    float: right !important;
+    font-size: 0.9em;
+    border-radius: 8px;
+    font-family: FangSong;
+}
+
+
+/*ticket content*/
+.cardWrap {
+    border-radius: 10px;
+    background: linear-gradient(to bottom, yellow 0%, yellow 26%, white 26%, white 100%);
+    margin: 1em;
+}
+
+.ticket {
+    padding: 0.5em 1em;
+}
+
+    .ticket.col-4 {
+        border-left: 0.18em dashed #383F45;
+        position: relative;
+    }
+
+        .ticket.col-4::after, .ticket.col-4::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 0.9em;
+            height: 0.9em;
+            background: #383F45;
+            border-radius: 50%;
+            left: -0.5em;
+        }
+
+        .ticket.col-4::before {
+            top: -.4em;
+        }
+
+        .ticket.col-4::after {
+            bottom: -.4em;
+        }
+
+    .ticket .title, .ticket .name, .ticket .seat, .ticket .time {
+        text-transform: uppercase;
+        font-weight: normal;
+    }
+
+        .ticket .title h2, .ticket .name h2, .ticket .seat h2, .ticket .time h2 {
+            font-size: .9em;
+            color: #525252;
+            margin: 0;
+        }
+
+        .ticket .title span, .ticket .name span, .ticket .seat span, .ticket .time span {
+            font-size: .7em;
+            color: #a2aeae;
+        }
+
+    .ticket .title {
+        margin: 2em 0 0 0;
+    }
+
+    .ticket .name, .ticket .seat {
+        margin: .2em 0 0 0;
+    }
+
+    .ticket .time {
+        margin: .2em 0 0 1em;
+    }
+
+    .ticket .seat, .ticket .time {
+        float: left;
+    }
+
+    .ticket .number {
+        padding-top: 2em;
+        text-align: center;
+        overflow-wrap: break-word;
+    }
+
+        .ticket .number h3 {
+            margin: .9em 0 0 0;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .ticket .number span {
+            display: block;
+            color: #a2aeae;
+        }
+
+.barcode-wrapper {
+    text-align: center;
+    padding: 1em 0;
+}
+
+.barcode {
+}
+
+.bookingContent {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    display: none;
+}
